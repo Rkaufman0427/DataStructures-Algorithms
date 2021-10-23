@@ -1,0 +1,37 @@
+public class Main {
+
+    public static void main(String[] args) {
+
+        System.out.println();
+        System.out.println("In Order:");
+        double[] salaries = new double[6];
+        salaries[0] = 7.15;
+        salaries[1] = 8.15;
+        salaries[2] = 9.15;
+        salaries[3] = 10.15;
+        salaries[4] = 11.15;
+        salaries[5] = 12.15;
+        salaries.print();
+
+        System.out.println();
+        System.out.println("Reverse Order:");
+        double[] salaries2 = new double[6];
+        salaries2[0] = 7.15;
+        salaries2[1] = 8.15;
+        salaries2[2] = 9.15;
+        salaries2[3] = 10.15;
+        salaries2[4] = 11.15;
+        salaries2[5] = 12.15;
+        salaries2.print();
+
+        System.out.println();
+        System.out.println("Mixed Order:");
+        double[] salaries3 = new double[6];
+        salaries3[0] = 7.15;
+        salaries3[1] = 8.15;
+        salaries3[2] = 9.15;
+        salaries3[3] = 10.15;
+        salaries3[4] = 11.15;
+        salaries3[5] = 12.15;
+        salaries2.print();
+    }
