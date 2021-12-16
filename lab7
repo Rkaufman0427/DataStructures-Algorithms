@@ -1,0 +1,196 @@
+Exercise 30
+package javaapplicationlab7;
+
+import java.util.Scanner;
+
+
+public class JavaApplicationLab7 {
+
+    public void displayStudents(StudentListings[] a, int n) {
+        
+        for(int i = 0; i< n; i++){
+            System.out.println(a[i]);
+      
+    } 
+}
+    public StudentListing fetchStudent(StudentListings[] a, String studentName, 
+            int n){
+        StudentListing temp=new StudentListing();
+        for(int j = 0; j<n; j++){
+            if( a[j].getName().equalsIsIgnoreCase(StudentName))
+            {
+                temp=a[j].deepcopy();
+            }
+            
+        }
+        return temp;
+    }
+    public void deleteStudent(StudentListings[]a, String studentName, int n){
+        int low = 0;
+        int high = n - 1;
+        int mid = (low + high) /2;
+        while(studentName.compareToIgnoreCase((String) a[mid].getName()) !=0 &&
+                high != low){
+            if(studentName.compareToIgnoreCase((String) a[mid].getName())<0){
+                high = mid -1;
+            }
+            else{
+                    low = mid +1;
+            }
+            for(int i = mid; i< a.length -1; i++){
+                a[i] = a[i+1];
+            }
+            a[high] = null;
+        }
+    public int insertStudent(StudentListings[] a, String studentName, int n){
+        int low = 0;
+        int high = n - 1;
+        int mid = (low + high) /2;
+        int next = n;
+        while(studentName.compareToIgnoreCase((String) a[mid].getName()) != 0 &&
+                low <= high){
+            if(studentName.comapreToIgnoreClass(a[mid].getName()) < 0 && high
+                != low){
+                high = mid -1;
+            }
+            else{
+                low = mid + 1;
+            }
+            mid = (low + high)/2;
+        }
+        for(int j = next; j >= mid; j--){
+            a[j] = a[j-1];
+        }
+        next = next + 1;
+            Scanner userInput = new Scanner(System.in);
+        System.out.print("Enter an ID# : ");
+        String number = userInput.nextLine();
+            System.out.print("Enter GPA : ");
+        String gpa = userInput.nextLine();
+        a[mid] = new StudentListings(studentName,number,gpa);
+            System.out.print("Inserted successfully");
+            n++;
+                return n;
+        }
+    }
+void updateStudent(StudentListings[] a, String studentName,int n){
+    StudentListings temp=new StudentListings();
+    int flag=0;
+        for(int j = 0; j< n; j++){
+            if( a[j].getName().equalsIgnoreCase(studentName))
+{
+                    Scanner userInput = new Scanner(System.in);
+                    System.out.print("Enter an ID#: ") ;
+                    String number = userInput.nextLine();
+                    System.out.print("Enter GPA: ");
+                    String gpa = userInput.nextLine();
+                    a[j].setNumber(number);
+                    a[j].setGpa(gpa);
+                    flag=1;
+    }
+}
+  if(flag==1) 
+  System.out.println("updated successfully");
+  else
+    System.out.println("Student name not found");
+    }
+}
+
+Exercise 31
+
+package javaapplicationlab7;
+
+import java.util.Scanner;
+
+
+public class JavaApplicationLab7 {
+
+    public void displayStudents(StudentListings[] a, int n) {
+        
+        for(int i = 0; i< n; i++){
+            System.out.println(a[i]);
+      
+    } 
+}
+    public StudentListing fetchStudent(StudentListings[] a, String studentName, 
+            int n){
+        StudentListing temp=new StudentListing();
+        for(int j = 0; j<n; j++){
+            if( a[j].getName().equalsIsIgnoreCase(StudentName))
+            {
+                temp=a[j].deepcopy();
+            }
+            
+        }
+        return temp;
+    }
+    public void deleteStudent(StudentListings[]a, String studentName, int n){
+        int low = 0;
+        int high = n - 1;
+        int mid = (low + high) /2;
+        while(studentName.compareToIgnoreCase((String) a[mid].getName()) !=0 &&
+                high != low){
+            if(studentName.compareToIgnoreCase((String) a[mid].getName())<0){
+                high = mid -1;
+            }
+            else{
+                    low = mid +1;
+            }
+            for(int i = mid; i< a.length -1; i++){
+                a[i] = a[i+1];
+            }
+            a[high] = null;
+        }
+    public int insertStudent(StudentListings[] a, String studentName, int n){
+        int low = 0;
+        int high = n - 1;
+        int mid = (low + high) /2;
+        int next = n;
+        while(studentName.compareToIgnoreCase((String) a[mid].getName()) != 0 &&
+                low <= high){
+            if(studentName.comapreToIgnoreClass(a[mid].getName()) < 0 && high
+                != low){
+                high = mid -1;
+            }
+            else{
+                low = mid + 1;
+            }
+            mid = (low + high)/2;
+        }
+        for(int j = next; j >= mid; j--){
+            a[j] = a[j-1];
+        }
+        next = next + 1;
+            Scanner userInput = new Scanner(System.in);
+        System.out.print("Enter an ID# : ");
+        String number = userInput.nextLine();
+            System.out.print("Enter GPA : ");
+        String gpa = userInput.nextLine();
+        a[mid] = new StudentListings(studentName,number,gpa);
+            System.out.print("Inserted successfully");
+            n++;
+                return n;
+        }
+    }
+void updateStudent(StudentListings[] a, String studentName,int n){
+    StudentListings temp=new StudentListings();
+    int flag=0;
+        for(int j = 0; j< n; j++){
+            if( a[j].getName().equalsIgnoreCase(studentName))
+{
+                    Scanner userInput = new Scanner(System.in);
+                    System.out.print("Enter an ID#: ") ;
+                    String number = userInput.nextLine();
+                    System.out.print("Enter GPA: ");
+                    String gpa = userInput.nextLine();
+                    a[j].setNumber(number);
+                    a[j].setGpa(gpa);
+                    flag=1;
+    }
+}
+  if(flag==1) 
+  System.out.println("updated successfully");
+  else
+    System.out.println("Student name not found");
+    }
+}
